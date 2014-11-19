@@ -10,4 +10,12 @@ if ($objData->action == 'register'){
 	file_put_contents( 'db.txt' , serialize($users) );
 	echo "User inserito";
 }
+
+
+
+if ($objData->action == 'getUser'){
+	$users=unserialize(file_get_contents('db.txt'));
+	echo json_encode($users);
+}
+
 ?>
