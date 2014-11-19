@@ -68,6 +68,10 @@ input:not([type="submit"]){
 	line-height: 1em;
 	padding: 5px;
 	color:#666;
+	&.ng-dirty{
+		background: rgba(180,0,0,0.6) !important;
+		color:#fff;
+	}
 	&:focus:active{
 		background: rgba(255,255,255,0.8);
 	}
@@ -84,7 +88,6 @@ input[type="submit"]{
 	color:#999;
 	font-size: 24px;
 	transition:all .8s;
-
 	&:hover{
 		background:#666;
 	}

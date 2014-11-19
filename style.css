@@ -5579,6 +5579,10 @@ input:not([type="submit"]) {
   padding: 5px;
   color: #666;
 }
+input:not([type="submit"]).ng-dirty {
+  background: rgba(180, 0, 0, 0.6) !important;
+  color: #fff;
+}
 input:not([type="submit"]):focus:active {
   background: rgba(255, 255, 255, 0.8);
 }

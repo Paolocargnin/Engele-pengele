@@ -18,16 +18,14 @@
 			<h1 class="well-font">
 				Pengele
 			</h1>
-			<form ng-if="toSend" action="" ng-submit="registerUser()">
-				<div class="row">
-					<label for="name">Nome</label> 
-					<input type="text" id="name" ng-model='name' required>
+			<section class="users">
+				<div class="user" ng-repeat="user in users">
+					<h2 class="well-font">{{user.name}} </h2>
+					<h4>{{user.name}}</h4>
 				</div>
-				<div class="row">
-					<label for="mail">Mail</label> 
-					<input type="text" id="mail" ng-model='mail' required>
-				</div>
-				<input type="submit" value="Iscriviti">
+			</section>
+			<form ng-if="toSend" action="" ng-submit="sendGame()">
+				<input type="submit" value="Lancia Mail">
 			</form>
 			{{result}}
 		</div>

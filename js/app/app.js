@@ -38,14 +38,18 @@ angular.module('engele', [])
 		$scope.result='';
 		$scope.toSend=true;
 		$scope.registerUser= function(){
-			$scope.toSend=false;
-			$http.post('api.php',{
-				action: 'register',
-				name: $scope.name,
-				mail: $scope.mail
-			}).
-			success(function(data){
-				$scope.result=data;
-			});
+			if ($scope.sendform.$valid){
+				$scope.toSend=false;
+				$http.post('api.php',{
+					action: 'register',
+					name: $scope.name,
+					mail: $scope.mail
+				}).
+				success(function(data){
+					$scope.result=data;
+				});
+			}else{
+				return false;
+			}
 		}
 	}]);
