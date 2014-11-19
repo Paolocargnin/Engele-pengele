@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'harabara_maisharabaramaisdemo';
+    src: url('fonts/harabara_mais_demo-webfont.eot');
+    src: url('fonts/harabara_mais_demo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/harabara_mais_demo-webfont.woff2') format('woff2'),
+         url('fonts/harabara_mais_demo-webfont.woff') format('woff'),
+         url('fonts/harabara_mais_demo-webfont.ttf') format('truetype'),
+         url('fonts/harabara_mais_demo-webfont.svg#harabara_maisharabaramaisdemo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@import "animate";
+
+html{
+	height: 100%;
+}
+body{
+	background: #ff9500; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ff9500 0%, #ff5e3a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9500), color-stop(100%,#ff5e3a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ff9500 0%,#ff5e3a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ff9500 0%,#ff5e3a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ff9500 0%,#ff5e3a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ff9500 0%,#ff5e3a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9500', endColorstr='#ff5e3a',GradientType=0 ); /* IE6-9 */
+	min-height: 100%;
+	padding: 0;
+	color:#fff;
+	font-family: "helvetica neue",helvetica;
+}
+
+.container{
+	width:600px;
+	margin: auto;
+}
+
+h1{
+	font-weight: normal;
+	margin: 0;
+	@include fadeInUpBig($duration, $delay, $function, $fill, $visibility);
+	font-size: 90px;
+	+ h1{
+		@include fadeInUpBig($duration*1.2, $delay*3, $function, $fill, $visibility);
+	}
+}
+
+.well-font{
+	font-family: 'harabara_maisharabaramaisdemo';
+}
+
+
+label{
+	display: block;
+	font-size: 24px;
+	margin:20px 0 10px;
+}
+
+input:not([type="submit"]){
+	border:none;
+	width: 100%;
+	box-sizing:border-box;
+	outline: none;
+	transition: all .5s;
+	background: rgba(255,255,255,0.4);
+	font-size: 48px;
+	line-height: 1em;
+	padding: 5px;
+	color:#666;
+	&:focus:active{
+		background: rgba(255,255,255,0.8);
+	}
+}
+
+input[type="submit"]{
+	display: block;
+	width:100%;
+	padding:20px;
+	margin-top:30px;
+	font-family: 'harabara_maisharabaramaisdemo';
+	border: 1px solid #000;
+	background: #333;
+	color:#999;
+	font-size: 24px;
+	transition:all .8s;
+
+	&:hover{
+		background:#666;
+	}
+}
