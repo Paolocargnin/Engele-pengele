@@ -21,17 +21,17 @@
 			<form novalidate ng-if="toSend" name="sendform" ng-submit="registerUser()">
 				<div class="row">
 					<label for="name">Nome</label> 
-					<input type="text" name="name" id="name" ng-model='name' required>
+					<input type="text" name="name" id="name" ng-model='user.name' required>
 				</div>
 				<div class="row">
 					<label for="mail">Mail</label> 
-					<input type="email" name="mail" id="mail" ng-model='mail' required>
+					<input type="text" name="mail" id="mail" ng-model='user.email' required>
 				</div>
 				<input type="submit" value="Iscriviti">
 			</form>
 			{{result}}
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+		<script src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/app/app.js"></script>
 
 		<!--script type="text/javascript" src="js/scripts.min.js"></script--> <!-- Production -->

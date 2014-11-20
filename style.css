@@ -5481,7 +5481,7 @@ body {
   min-height: 100%;
   padding: 0;
   color: #fff;
-  font-family: "helvetica neue",helvetica;
+  font-family: "lato", "helvetica neue",helvetica;
 }
 
 .container {
@@ -5557,6 +5557,11 @@ h1 + h1 {
   backface-visibility: hidden;
 }
 
+h2 {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
 .well-font {
   font-family: 'harabara_maisharabaramaisdemo';
 }
@@ -5579,10 +5584,6 @@ input:not([type="submit"]) {
   padding: 5px;
   color: #666;
 }
-input:not([type="submit"]).ng-dirty {
-  background: rgba(180, 0, 0, 0.6) !important;
-  color: #fff;
-}
 input:not([type="submit"]):focus:active {
   background: rgba(255, 255, 255, 0.8);
 }
@@ -5601,6 +5602,13 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   background: #666;
+}
+
+.fake-input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-bottom: 2px solid !important;
+  font-size: 22px !important;
+  color: #fff !important;
 }
 
 /*# sourceMappingURL=style.css.map */

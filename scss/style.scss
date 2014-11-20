@@ -28,7 +28,7 @@ body{
 	min-height: 100%;
 	padding: 0;
 	color:#fff;
-	font-family: "helvetica neue",helvetica;
+	font-family: "lato", "helvetica neue",helvetica;
 }
 
 .container{
@@ -44,6 +44,11 @@ h1{
 	+ h1{
 		@include fadeInUpBig($duration*1.2, $delay*3, $function, $fill, $visibility);
 	}
+}
+
+h2{
+	margin-bottom:0;
+	font-weight: normal;
 }
 
 .well-font{
@@ -68,10 +73,10 @@ input:not([type="submit"]){
 	line-height: 1em;
 	padding: 5px;
 	color:#666;
-	&.ng-dirty{
-		background: rgba(180,0,0,0.6) !important;
-		color:#fff;
-	}
+	// &.ng-dirty{
+	// 	background: rgba(180,0,0,0.6) !important;
+	// 	color:#fff;
+	// }
 	&:focus:active{
 		background: rgba(255,255,255,0.8);
 	}
@@ -91,4 +96,10 @@ input[type="submit"]{
 	&:hover{
 		background:#666;
 	}
+}
+.fake-input{
+	background: rgba(255,255,255,0.1) !important;
+	border-bottom: 2px solid !important;
+	font-size: 22px !important;
+	color: #fff !important;
 }

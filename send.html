@@ -20,16 +20,15 @@
 			</h1>
 			<section class="users">
 				<div class="user" ng-repeat="user in users">
-					<h2 class="well-font">{{user.name}} </h2>
-					<h4>{{user.name}}</h4>
+					<h2 class="well-font">{{user.name}}</h2>
+					<input type="text" class="fake-input" ng-model="user.mail">
 				</div>
 			</section>
 			<form ng-if="toSend" action="" ng-submit="sendGame()">
 				<input type="submit" value="Lancia Mail">
 			</form>
-			{{result}}
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+		<script src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/app/app.js"></script>
 
 		<!--script type="text/javascript" src="js/scripts.min.js"></script--> <!-- Production -->

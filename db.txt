@@ -1,1 +1,1 @@
-a:0:{}
+a:2:{i:0;a:2:{s:4:"name";s:5:"Paolo";s:4:"mail";s:23:"Cargnin.paolo@gmail.com";}i:1;a:2:{s:4:"name";s:7:"Martina";s:4:"mail";s:18:"martina@carraro.it";}}

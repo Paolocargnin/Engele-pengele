@@ -36,20 +36,29 @@ angular.module('engele', [])
 .controller('subscribeController', ['$scope', '$http', '$templateCache',
 	function($scope, $http, $templateCache) {
 		$scope.result='';
+		$scope.user={};
 		$scope.toSend=true;
 		$scope.registerUser= function(){
-			if ($scope.sendform.$valid){
-				$scope.toSend=false;
-				$http.post('api.php',{
-					action: 'register',
-					name: $scope.name,
-					mail: $scope.mail
-				}).
-				success(function(data){
-					$scope.result=data;
-				});
-			}else{
-				return false;
-			}
+			$scope.toSend=false;
+			$http.post('api.php',{
+				action: 'register',
+				name: $scope.user.name,
+				mail: $scope.user.email
+			}).
+			success(function(data){
+				$scope.result=data;
+			});
 		}
+	}])
+.controller('sendController', ['$scope', '$http', '$templateCache',
+	function($scope, $http, $templateCache) {
+		$scope.toSend=true;
+		$http.post('api.php',{action:'getUser'}).
+		success(function(data){
+			$scope.users=data;
+		});
+
+		$scope.sendGame = function(){
+			debugger;
+		};
 	}]);
