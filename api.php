@@ -22,7 +22,6 @@ if ($objData->action == 'getUser'){
 }
 
 if ($objData->action == 'sendEngele'){
-	print_r($objData->users);
 	//random this array $objData->users
 	function shuffle_assoc(&$array) {
 	    $keys = array_keys($array);
@@ -36,8 +35,6 @@ if ($objData->action == 'sendEngele'){
 	    return $new;
 	}
 	shuffle($objData->users);
-	echo "_______";
-	print_r($objData->users);
 	for ($i=0; $i < count($objData->users); $i++) {
 		if ($i==0){
 			$dest = count($objData->users)-1;
