@@ -44,7 +44,7 @@ if ($objData->action == 'sendEngele'){
 		$regalatore= $objData->users[$i];
 		$ricevitore= $objData->users[$dest];
 
-		mail($regalatore->mail, "Engele Pengele", "Ciao reMediano \n Dovrai fare il regalo a... \n\n\n\n...\n...\n\nUn po' di suspance(suggerito da Giulia) \n\n\n\n" $ricevitore->name);
+		mail($regalatore->mail, "Engele Pengele", "Ciao reMediano \n Dovrai fare il regalo a... \n\n\n\n...\n...\n\nUn po' di suspance(suggerito da Giulia) \n\n\n\n".$ricevitore->name);
 
 		echo "Mail inviata a: ". $regalatore->mail."<br>";
 	}
