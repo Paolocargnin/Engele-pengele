@@ -39,13 +39,13 @@ angular.module('engele', [])
 		$scope.user={};
 		$scope.toSend=true;
 		$scope.registerUser= function(){
-			$scope.toSend=false;
 			$http.post('api.php',{
 				action: 'register',
 				name: $scope.user.name,
-				mail: $scope.user.email
+				mail: $scope.user.mail
 			}).
 			success(function(data){
+				$scope.toSend=false;
 				$scope.result=data;
 			});
 		}
@@ -53,12 +53,35 @@ angular.module('engele', [])
 .controller('sendController', ['$scope', '$http', '$templateCache',
 	function($scope, $http, $templateCache) {
 		$scope.toSend=true;
+		$scope.userToAdd={};
+
 		$http.post('api.php',{action:'getUser'}).
 		success(function(data){
 			$scope.users=data;
 		});
 
+		// $scope.timeRand=0;
+		// setTimeout(funciton(){
+		// 	$scope.timeRand++;
+		// },1000)
+
+		$scope.deleteUser = function(index){
+			$scope.users.splice(index,1);
+		};
+
+		$scope.addUser = function(){
+			$scope.users.push($scope.userToAdd);
+			$scope.userToAdd={name:'',mail:''};
+		};
+
 		$scope.sendGame = function(){
-			debugger;
+			$http.post('api.php',{
+				action: 'sendEngele',
+				users: $scope.users
+			}).
+			success(function(data){
+				$scope.toSend=false;
+				$scope.result=data;
+			});
 		};
 	}]);

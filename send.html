@@ -20,12 +20,19 @@
 			</h1>
 			<section class="users">
 				<div class="user" ng-repeat="user in users">
-					<h2 class="well-font">{{user.name}}</h2>
+					<h2 class="well-font">{{user.name}} <span ng-click="deleteUser($index)">Rimuovi</span></h2>
 					<input type="text" class="fake-input" ng-model="user.mail">
 				</div>
 			</section>
+			<form name="addUserForm" ng-submit="addUser()">
+				<h1>Add User</h1>
+				<input type="text" class="fake-input" ng-model="userToAdd.name" placeholder="Name">
+				<input type="text" class="fake-input" ng-model="userToAdd.mail" placeholder="Mail">				
+				<input type="submit" value="Iscrivi" style="display:none">
+			</form>
 			<form ng-if="toSend" action="" ng-submit="sendGame()">
-				<input type="submit" value="Lancia Mail">
+				<input type="submit" value="Lancia Mail" ng-if="toSend">
+				<h4 style="font-weight:normal;" class="well-font bounceIn" ng-if="!toSend">{{result}}</h4>
 			</form>
 		</div>
 		<script src="js/angular.min.js"></script>
